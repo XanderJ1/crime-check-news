@@ -1,0 +1,134 @@
+.richtext {
+  max-width: 900px;
+  margin: 6em auto;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.richtext h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.richtext h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 1.75rem;
+  margin-bottom: 0.875rem;
+  color: #2d3748;
+}
+
+.richtext h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #2d3748;
+}
+
+.richtext h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 1.25rem;
+  margin-bottom: 0.625rem;
+  color: #4a5568;
+}
+
+.richtext h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.richtext h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #718096;
+}
+
+.richtext p {
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  color: #374151;
+  font-size: 1.125rem;
+}
+
+.richtext ul,
+.richtext ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.richtext li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.richtext a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.richtext a:hover {
+  color: #1d4ed8;
+}
+
+.richtext strong {
+  font-weight: 700;
+}
+
+.richtext em {
+  font-style: italic;
+}
+
+.richtext blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.richtext code {
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875em;
+}
+
+.richtext pre {
+  background-color: #1f2937;
+  color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.richtext pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.richtext img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
