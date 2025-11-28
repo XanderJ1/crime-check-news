@@ -10,7 +10,7 @@ import {
 } from "@/lib/prismic-helpers";
 
 export default async function SearchPage({ searchParams }) {
-    const q = searchParams.q || "";
+    const { q } = await searchParams;
     const client = createClient();
     let articles = [];
 
