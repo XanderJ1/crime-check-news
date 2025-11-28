@@ -18,7 +18,68 @@
             "placeholder": "Lorem ipsum...",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,embed,list-item",
-            "labels": ["codespan"]
+            "labels": [
+              "codespan"
+            ]
+          }
+        },
+        "article_image": {
+          "type": "Image",
+          "config": {
+            "label": "article image",
+            "constraint": {
+              "width": 800,
+              "height": 600
+            },
+            "thumbnails": []
+          }
+        },
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "video",
+            "placeholder": "article_video"
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "withImages",
+      "name": "with images",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "RichText",
+      "primary": {
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "Lorem ipsum...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,embed,list-item",
+            "labels": [
+              "codespan"
+            ]
+          }
+        },
+        "article_image": {
+          "type": "Image",
+          "config": {
+            "label": "article image",
+            "constraint": {
+              "width": 800,
+              "height": 600
+            },
+            "thumbnails": []
+          }
+        },
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "video",
+            "placeholder": "article_video"
           }
         }
       },

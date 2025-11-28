@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import NewsCard from "../../components/NewsCard";
+import PaginatedNewsList from "../../components/PaginatedNewsList";
+import LatestNewsSidebar from "../../components/LatestNewsSidebar";
 import { createClient } from "@/prismicio";
 import { filter } from "@prismicio/client";
 import {
@@ -53,15 +54,14 @@ export default async function SportsPage() {
                 </div>
                 <p className="text-gray-600 mb-10 text-lg">Live scores, highlights, and sports news from around the globe</p>
 
-                {articles.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {articles.map((item) => <NewsCard key={item.id} item={item} showReadMore={true} />)}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div className="lg:col-span-8">
+                        <PaginatedNewsList articles={articles} itemsPerPage={10} />
                     </div>
-                ) : (
-                    <div className="text-center py-20 bg-gray-50 rounded-lg">
-                        <p className="text-gray-500 text-lg">No sports articles found.</p>
+                    <div className="lg:col-span-4">
+                        <LatestNewsSidebar articles={articles} title="Latest Sports News" />
                     </div>
-                )}
+                </div>
             </main>
             <Footer />
         </>

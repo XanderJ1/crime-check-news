@@ -37,6 +37,12 @@ const NewsCard = ({ item, showReadMore = false }) => {
                     <span className="font-semibold text-gray-700">{item.source}</span>
                     <span>•</span>
                     <span>{formatRelativeTime(item.time)}</span>
+                    {item.readTime && (
+                        <>
+                            <span>•</span>
+                            <span>{item.readTime} min read</span>
+                        </>
+                    )}
                 </div>
 
                 <h3 className="font-bold text-lg leading-tight mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">

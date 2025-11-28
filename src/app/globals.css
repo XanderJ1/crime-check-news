@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+/* Base typography - fonts only, no colors */
+body {
+    font-family: var(--font-lora), Georgia, serif;
+}
+
+/* Headings use Merriweather */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-merriweather), Georgia, serif;
+}
+
+/* Article prose styles */
+.prose {
+    font-family: var(--font-lora), Georgia, serif;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    font-family: var(--font-merriweather), Georgia, serif;
+}

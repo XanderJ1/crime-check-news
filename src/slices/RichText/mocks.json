@@ -1,25 +1,144 @@
 [
-  {
-    "__TYPE__": "SharedSliceContent",
-    "variation": "default",
-    "primary": {
-      "content": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "paragraph",
-            "content": {
-              "text": "Esse aliqua qui in qui duis nisi. Esse elit elit culpa cillum dolore eiusmod aliquip deserunt."
-            }
-          }
-        ]
-      }
-    },
-    "items": [
-      {
-        "__TYPE__": "GroupItemContent",
-        "value": []
-      }
-    ]
-  }
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Esse aliqua qui in qui duis nisi. Esse elit elit culpa cillum dolore eiusmod aliquip deserunt."
+						}
+					}
+				]
+			},
+			"article_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+					"width": 4160,
+					"height": 3120
+				},
+				"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118?rect=0%2C0%2C4160%2C3120&w=800&h=600",
+				"width": 800,
+				"height": 600,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "tin",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"video": {
+				"embed_url": "https://twitter.com/prismicio/status/1354112310252630016",
+				"author_name": "Prismic",
+				"author_url": "https://twitter.com/prismicio",
+				"html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">We&#39;re launching a new <a href=\"https://twitter.com/hashtag/SliceContest?src=hash&amp;ref_src=twsrc%5Etfw\">#SliceContest</a> tomorrow along with Slice Machine upgrades.<br><br>Want to know more? Join us at tomorrow&#39;s Product Meet-up👇<a href=\"https://t.co/prYSypiAvB\">https://t.co/prYSypiAvB</a><br><br>We can&#39;t tell you any further details for now, but here&#39;s a sneak peek at the prizes👀 <a href=\"https://t.co/fV1eoGlEBh\">pic.twitter.com/fV1eoGlEBh</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354112310252630016?ref_src=twsrc%5Etfw\">January 26, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+				"type": "rich",
+				"cache_age": "3153600000",
+				"provider_name": "Twitter",
+				"provider_url": "http://www.twitter.com/",
+				"version": "1.0",
+				"all": {
+					"embed_url": "https://twitter.com/prismicio/status/1354112310252630016",
+					"author_name": "Prismic",
+					"author_url": "https://twitter.com/prismicio",
+					"html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">We&#39;re launching a new <a href=\"https://twitter.com/hashtag/SliceContest?src=hash&amp;ref_src=twsrc%5Etfw\">#SliceContest</a> tomorrow along with Slice Machine upgrades.<br><br>Want to know more? Join us at tomorrow&#39;s Product Meet-up👇<a href=\"https://t.co/prYSypiAvB\">https://t.co/prYSypiAvB</a><br><br>We can&#39;t tell you any further details for now, but here&#39;s a sneak peek at the prizes👀 <a href=\"https://t.co/fV1eoGlEBh\">pic.twitter.com/fV1eoGlEBh</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354112310252630016?ref_src=twsrc%5Etfw\">January 26, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+					"width": 550,
+					"height": null,
+					"type": "rich",
+					"cache_age": "3153600000",
+					"provider_name": "Twitter",
+					"provider_url": "http://www.twitter.com/",
+					"version": "1.0"
+				},
+				"__TYPE__": "EmbedContent"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withImages",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis ut ullamco laboris fugiat enim est labore deserunt enim."
+						}
+					}
+				]
+			},
+			"article_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+					"width": 4000,
+					"height": 6000
+				},
+				"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?rect=0%2C1500%2C4000%2C3000&w=800&h=600",
+				"width": 800,
+				"height": 600,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 1500
+					},
+					"background": "transparent"
+				},
+				"alt": "scientist",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"video": {
+				"embed_url": "https://twitter.com/prismicio/status/1354112310252630016",
+				"author_name": "Prismic",
+				"author_url": "https://twitter.com/prismicio",
+				"html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">We&#39;re launching a new <a href=\"https://twitter.com/hashtag/SliceContest?src=hash&amp;ref_src=twsrc%5Etfw\">#SliceContest</a> tomorrow along with Slice Machine upgrades.<br><br>Want to know more? Join us at tomorrow&#39;s Product Meet-up👇<a href=\"https://t.co/prYSypiAvB\">https://t.co/prYSypiAvB</a><br><br>We can&#39;t tell you any further details for now, but here&#39;s a sneak peek at the prizes👀 <a href=\"https://t.co/fV1eoGlEBh\">pic.twitter.com/fV1eoGlEBh</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354112310252630016?ref_src=twsrc%5Etfw\">January 26, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+				"type": "rich",
+				"cache_age": "3153600000",
+				"provider_name": "Twitter",
+				"provider_url": "http://www.twitter.com/",
+				"version": "1.0",
+				"all": {
+					"embed_url": "https://twitter.com/prismicio/status/1354112310252630016",
+					"author_name": "Prismic",
+					"author_url": "https://twitter.com/prismicio",
+					"html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">We&#39;re launching a new <a href=\"https://twitter.com/hashtag/SliceContest?src=hash&amp;ref_src=twsrc%5Etfw\">#SliceContest</a> tomorrow along with Slice Machine upgrades.<br><br>Want to know more? Join us at tomorrow&#39;s Product Meet-up👇<a href=\"https://t.co/prYSypiAvB\">https://t.co/prYSypiAvB</a><br><br>We can&#39;t tell you any further details for now, but here&#39;s a sneak peek at the prizes👀 <a href=\"https://t.co/fV1eoGlEBh\">pic.twitter.com/fV1eoGlEBh</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354112310252630016?ref_src=twsrc%5Etfw\">January 26, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+					"width": 550,
+					"height": null,
+					"type": "rich",
+					"cache_age": "3153600000",
+					"provider_name": "Twitter",
+					"provider_url": "http://www.twitter.com/",
+					"version": "1.0"
+				},
+				"__TYPE__": "EmbedContent"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
 ]

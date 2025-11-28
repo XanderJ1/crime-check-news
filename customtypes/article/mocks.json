@@ -1,1 +1,74 @@
-[]
+[
+    {
+        "id": "mock-article-1",
+        "uid": "sample-article-sports",
+        "url": "/article/sample-article-sports",
+        "type": "article",
+        "href": "https://crimechecknews.cdn.prismic.io/api/v2/documents/search?ref=master&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22mock-article-1%22%29%5D%5D",
+        "tags": [],
+        "first_publication_date": "2023-10-27T10:00:00+0000",
+        "last_publication_date": "2023-10-27T10:00:00+0000",
+        "slugs": [
+            "sample-article-sports"
+        ],
+        "linked_documents": [],
+        "lang": "en-us",
+        "alternate_languages": [],
+        "data": {
+            "title": [
+                {
+                    "type": "heading1",
+                    "text": "Championship Finals: A Night to Remember",
+                    "spans": []
+                }
+            ],
+            "excerpt": [
+                {
+                    "type": "paragraph",
+                    "text": "The underdogs pulled off a stunning victory in the final minutes of the game, securing their place in history.",
+                    "spans": []
+                }
+            ],
+            "featured_image": {
+                "dimensions": {
+                    "width": 1200,
+                    "height": 630
+                },
+                "alt": "Stadium celebration",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=1200&h=630"
+            },
+            "category": "Sports",
+            "tags": [
+                {
+                    "tag": "Football"
+                },
+                {
+                    "tag": "Finals"
+                }
+            ],
+            "author": "Jane Smith",
+            "publish_date": "2023-10-27",
+            "read_time": 5,
+            "featured": true,
+            "content": [
+                {
+                    "slice_type": "rich_text",
+                    "slice_label": null,
+                    "items": [],
+                    "primary": {
+                        "text": [
+                            {
+                                "type": "paragraph",
+                                "text": "It was a match that defied all expectations. The energy in the stadium was electric as the two teams faced off.",
+                                "spans": []
+                            }
+                        ]
+                    }
+                }
+            ],
+            "meta_title": "Championship Finals Report",
+            "meta_description": "Read about the stunning victory in the championship finals."
+        }
+    }
+]

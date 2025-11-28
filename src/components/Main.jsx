@@ -20,8 +20,6 @@ const Main = ({ articles = [] }) => {
     const remainingArticles = articles.filter(a => a.id !== heroArticle?.id);
 
     const latestNews = remainingArticles.slice(0, 6);
-    const politicsNews = articles.filter(item => item.category === 'Politics' && item.id !== heroArticle?.id).slice(0, 3);
-    const entertainmentNews = articles.filter(item => item.category === 'Entertainment' && item.id !== heroArticle?.id).slice(0, 3);
     const popularNews = articles.slice(0, 4); // Just using first 4 for now as "popular"
     const recentSidebarNews = articles.slice(6, 11);
 
@@ -58,7 +56,7 @@ const Main = ({ articles = [] }) => {
                                 <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 leading-tight">
                                     {heroArticle.title}
                                 </h1>
-                                <p className="text-gray-200 text-lg max-w-2xl line-clamp-2">
+                                <p className="text-white text-lg max-w-2xl line-clamp-2">
                                     {heroArticle.snippet}
                                 </p>
                             </div>
@@ -82,35 +80,42 @@ const Main = ({ articles = [] }) => {
                     </div>
                 </section>
 
-                {/* Politics Section */}
-                {politicsNews.length > 0 && (
-                    <section className="mb-12">
-                        <div className="flex items-center gap-3 mb-8">
-                            <div className="w-1.5 h-8 bg-blue-600 rounded-full"></div>
-                            <h2 className="text-3xl font-bold text-gray-900">Politics</h2>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10">
-                            {politicsNews.map((item) => (
-                                <NewsCard key={item.id} item={item} />
-                            ))}
-                        </div>
-                    </section>
-                )}
+                {/* Category Sections */}
+                {['Politics', 'Sports', 'Business', 'Lifestyle', 'Entertainment', 'Arts', 'International'].map((category) => {
+                    const categoryArticles = articles
+                        .filter(item => item.category === category && item.id !== heroArticle?.id)
+                        .slice(0, 3);
 
-                {/* Entertainment Section */}
-                {entertainmentNews.length > 0 && (
-                    <section className="mb-12">
-                        <div className="flex items-center gap-3 mb-8">
-                            <div className="w-1.5 h-8 bg-purple-600 rounded-full"></div>
-                            <h2 className="text-3xl font-bold text-gray-900">Entertainment</h2>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10">
-                            {entertainmentNews.map((item) => (
-                                <NewsCard key={item.id} item={item} />
-                            ))}
-                        </div>
-                    </section>
-                )}
+                    if (categoryArticles.length === 0) return null;
+
+                    // Define category colors
+                    const categoryColors = {
+                        Politics: 'bg-blue-600',
+                        Sports: 'bg-green-600',
+                        Business: 'bg-indigo-600',
+                        Lifestyle: 'bg-pink-600',
+                        Entertainment: 'bg-purple-600',
+                        Arts: 'bg-amber-600',
+                        International: 'bg-teal-600'
+                    };
+
+                    return (
+                        <section key={category} className="mb-12">
+                            <div className="flex items-center gap-3 mb-8">
+                                <div className={`w-1.5 h-8 ${categoryColors[category] || 'bg-gray-600'} rounded-full`}></div>
+                                <h2 className="text-3xl font-bold text-gray-900">{category}</h2>
+                                <Link href={`/${category.toLowerCase()}`} className="ml-auto text-sm font-bold text-gray-500 hover:text-gray-900 flex items-center gap-1">
+                                    View All <span aria-hidden="true">&rarr;</span>
+                                </Link>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10">
+                                {categoryArticles.map((item) => (
+                                    <NewsCard key={item.id} item={item} />
+                                ))}
+                            </div>
+                        </section>
+                    );
+                })}
             </div>
 
             {/* Sidebar */}
