@@ -1,12 +1,24 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
+    const router = useRouter();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const handleSearch = (e) => {
+        if (e.key === 'Enter') {
+            if (searchQuery.trim()) {
+                router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+                setIsMenuOpen(false);
+            }
+        }
     };
 
     return (
@@ -34,9 +46,12 @@ const Header = () => {
 
                 {/* Desktop Search */}
                 <input
-                    className="hidden md:block border px-3 py-1 border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400"
+                    className="hidden md:block w-64 border px-3 py-1 border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400"
                     type="text"
                     placeholder="Search"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={handleSearch}
                 />
 
                 {/* Subscribe Button */}
@@ -79,6 +94,9 @@ const Header = () => {
                         className="w-full mt-4 border px-3 py-2 border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400"
                         type="text"
                         placeholder="Search"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        onKeyDown={handleSearch}
                     />
 
                     {/* Mobile Subscribe Button (shown only on very small screens) */}
