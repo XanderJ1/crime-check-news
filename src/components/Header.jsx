@@ -14,7 +14,7 @@ const Header = () => {
             <div className="flex items-center justify-between gap-4">
                 {/* Logo */}
                 <Link className="flex-shrink-0" href="/">
-                    <img src="/logo.png" alt="Logo" className="h-12 w-12 md:h-16 md:w-16" />
+                    <img src="/logo.png" alt="Crime Check News" className="h-12 w-12 md:h-16 md:w-16" />
                 </Link>
 
                 {/* Desktop Navigation */}
