@@ -1,6 +1,6 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
-import { Merriweather, Lora } from "next/font/google";
+import { Merriweather, Lora, Inter } from "next/font/google";
 import "./globals.css";
 
 const merriweather = Merriweather({
@@ -17,6 +17,13 @@ const lora = Lora({
   display: "swap",
 });
 
+const inter = Inter({
+  weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${merriweather.variable} ${lora.variable}`}>
+      <body className={`${merriweather.variable} ${lora.variable} ${inter.variable}`}>
         {children}
       </body>
       <PrismicPreview repositoryName={repositoryName} />

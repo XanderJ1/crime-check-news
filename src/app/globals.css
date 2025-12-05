@@ -5,14 +5,14 @@ body {
     font-family: var(--font-lora), Georgia, serif;
 }
 
-/* Headings use Merriweather */
+/* Headings use Inter */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-merriweather), Georgia, serif;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Article prose styles */
@@ -26,5 +26,5 @@ h6 {
 .prose h4,
 .prose h5,
 .prose h6 {
-    font-family: var(--font-merriweather), Georgia, serif;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }

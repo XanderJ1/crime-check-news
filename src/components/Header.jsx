@@ -22,7 +22,7 @@ const Header = () => {
     };
 
     return (
-        <header className="max-w-[1600px] mx-auto pt-4 px-4">
+        <header className="max-w-7xl mx-auto pt-4 px-4">
             <div className="flex items-center justify-between gap-4">
                 {/* Logo */}
                 <Link className="flex-shrink-0" href="/">

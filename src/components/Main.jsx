@@ -34,7 +34,7 @@ const Main = ({ articles = [] }) => {
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-7 max-w-[1600px] mx-auto gap-8 mt-10 px-4 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-7 max-w-7xl mx-auto gap-8 mt-10 px-4 mb-20">
             <div className="lg:col-span-5">
                 {/* Hero Section */}
                 {heroArticle && (

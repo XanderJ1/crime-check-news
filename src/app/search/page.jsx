@@ -49,7 +49,7 @@ export default async function SearchPage({ searchParams }) {
     return (
         <>
             <Header />
-            <main className="max-w-[1600px] mx-auto px-8 py-16">
+            <main className="max-w-7xl mx-auto px-8 py-16">
                 <div className="flex items-center gap-3 mb-8">
                     <div className="w-1.5 h-12 bg-gray-900 rounded-full"></div>
                     <h1 className="text-4xl font-bold text-gray-900">

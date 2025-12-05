@@ -31,7 +31,7 @@ export default function RelatedArticles({ articles, currentArticleUid }: Related
     }
 
     return (
-        <section className="max-w-[1600px] mx-auto px-4 py-16 bg-gray-50">
+        <section className="max-w-7xl mx-auto px-4 py-16 bg-gray-50">
             <div className="mb-10">
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Related Articles</h2>
                 <p className="text-gray-600">Continue reading with these stories</p>

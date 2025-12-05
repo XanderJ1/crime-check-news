@@ -1,6 +1,6 @@
 import { type FC } from "react";
 import { type Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import {
   PrismicRichText,
   type SliceComponentProps,
@@ -30,7 +30,26 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
 const RichText: FC<RichTextProps> = ({ slice }) => {
   return (
     <section className={styles.richtext}>
+      {/* Render article image if present */}
+      {slice.primary.article_image && slice.primary.article_image.url && (
+        <div className={styles.imageWrapper}>
+          <PrismicNextImage
+            field={slice.primary.article_image}
+            className={styles.image}
+          />
+        </div>
+      )}
+
+      {/* Render rich text content */}
       <PrismicRichText field={slice.primary.content} components={components} />
+
+      {/* Render video embed if present */}
+      {slice.primary.video && slice.primary.video.html && (
+        <div
+          className={styles.videoWrapper}
+          dangerouslySetInnerHTML={{ __html: slice.primary.video.html }}
+        />
+      )}
     </section>
   );
 };

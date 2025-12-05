@@ -46,7 +46,7 @@ export default async function BusinessPage() {
     return (
         <>
             <Header />
-            <main className="max-w-[1600px] mx-auto px-8 py-16">
+            <main className="max-w-7xl mx-auto px-8 py-16">
                 <div className="flex items-center gap-3 mb-8">
                     <div className="w-1.5 h-12 bg-amber-600 rounded-full"></div>
                     <h1 className="text-4xl font-bold text-gray-900">Business & Finance</h1>

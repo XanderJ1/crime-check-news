@@ -232,7 +232,7 @@ interface ArticleDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/slices
    */
-  content: prismic.SliceZone<ArticleDocumentDataContentSlice> /**
+  content: prismic.SliceZone<ArticleDocumentDataContentSlice>; /**
    * Meta Title field in *Article*
    *
    * - **Field Type**: Text
@@ -240,7 +240,7 @@ interface ArticleDocumentData {
    * - **API ID Path**: article.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/fields/text
-   */;
+   */
   meta_title: prismic.KeyTextField;
 
   /**
@@ -308,7 +308,7 @@ interface PageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/slices
    */
-  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice>; /**
    * Meta Title field in *Page*
    *
    * - **Field Type**: Text
@@ -316,7 +316,7 @@ interface PageDocumentData {
    * - **API ID Path**: page.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/fields/text
-   */;
+   */
   meta_title: prismic.KeyTextField;
 
   /**
@@ -460,57 +460,9 @@ export type RichTextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *RichText → with images → Primary*
- */
-export interface RichTextSliceWithImagesPrimary {
-  /**
-   * Content field in *RichText → with images → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.withImages.primary.content
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * article image field in *RichText → with images → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: rich_text.withImages.primary.article_image
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  article_image: prismic.ImageField<never>;
-
-  /**
-   * video field in *RichText → with images → Primary*
-   *
-   * - **Field Type**: Embed
-   * - **Placeholder**: article_video
-   * - **API ID Path**: rich_text.withImages.primary.video
-   * - **Documentation**: https://prismic.io/docs/fields/embed
-   */
-  video: prismic.EmbedField;
-}
-
-/**
- * with images variation for RichText Slice
- *
- * - **API ID**: `withImages`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slices
- */
-export type RichTextSliceWithImages = prismic.SharedSliceVariation<
-  "withImages",
-  Simplify<RichTextSliceWithImagesPrimary>,
-  never
->;
-
-/**
  * Slice variation for *RichText*
  */
-type RichTextSliceVariation = RichTextSliceDefault | RichTextSliceWithImages;
+type RichTextSliceVariation = RichTextSliceDefault;
 
 /**
  * RichText Shared Slice
@@ -559,10 +511,8 @@ declare module "@prismicio/client" {
       ArticleSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
-      RichTextSliceWithImagesPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
-      RichTextSliceWithImages,
     };
   }
 }
