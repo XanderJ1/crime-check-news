@@ -143,6 +143,7 @@ interface ArticleDocumentData {
     | "Technology"
     | "Health"
     | "Science"
+    | "Crime"
   >;
 
   /**

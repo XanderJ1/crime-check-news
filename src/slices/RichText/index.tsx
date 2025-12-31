@@ -36,6 +36,7 @@ const RichText: FC<RichTextProps> = ({ slice }) => {
           <PrismicNextImage
             field={slice.primary.article_image}
             className={styles.image}
+            alt={""}
           />
         </div>
       )}

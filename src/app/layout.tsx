@@ -31,6 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-8697384359408561" />
+        <title>Crime Check News</title>
+      </head>
       <body className={`${merriweather.variable} ${lora.variable} ${inter.variable}`}>
         {children}
       </body>
