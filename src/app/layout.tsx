@@ -31,14 +31,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="google-adsense-account" content="ca-pub-8697384359408561" />
+    <head>
+        <meta name="google-adsense-account" content="ca-pub-8697384359408561"/>
+        <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8697384359408561"
+                crossOrigin="anonymous"></script>
         <title>Crime Check News</title>
-      </head>
-      <body className={`${merriweather.variable} ${lora.variable} ${inter.variable}`}>
-        {children}
-      </body>
-      <PrismicPreview repositoryName={repositoryName} />
+    </head>
+    <body className={`${merriweather.variable} ${lora.variable} ${inter.variable}`}>
+    {children}
+    </body>
+    <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }
