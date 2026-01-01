@@ -2,6 +2,8 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Merriweather, Lora, Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
+import { Metadata } from "next";
 
 const merriweather = Merriweather({
   weight: ["300", "400", "700", "900"],
@@ -24,6 +26,13 @@ const inter = Inter({
   display: "swap",
 });
 
+export const metadata: Metadata = {
+  title: "Crime Check News",
+  other: {
+    "google-adsense-account": "ca-pub-8697384359408561",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,17 +40,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <head>
-        <meta name="google-adsense-account" content="ca-pub-8697384359408561"/>
-        <script async
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8697384359408561"
-                crossOrigin="anonymous"></script>
-        <title>Crime Check News</title>
-    </head>
-    <body className={`${merriweather.variable} ${lora.variable} ${inter.variable}`}>
-    {children}
-    </body>
-    <PrismicPreview repositoryName={repositoryName} />
+      <body className={`${merriweather.variable} ${lora.variable} ${inter.variable}`}>
+        {children}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8697384359408561"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        <PrismicPreview repositoryName={repositoryName} />
+      </body>
     </html>
   );
 }
