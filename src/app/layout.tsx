@@ -27,7 +27,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Crime Check News",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://crimechecknews.com"),
+  title: {
+    template: "%s | Crime Check News",
+    default: "Crime Check News",
+  },
   other: {
     "google-adsense-account": "ca-pub-8697384359408561",
   },

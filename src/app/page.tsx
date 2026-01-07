@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Main from "../components/Main";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -26,6 +27,18 @@ interface Article {
   featured: boolean;
   publishDate: string;
 }
+
+export const metadata: Metadata = {
+  title: "Crime Check News - Breaking News & Analysis",
+  description: "Stay informed with the latest crime news, investigations, and safety alerts. Your trusted source for breaking news and in-depth analysis.",
+  openGraph: {
+    title: "Crime Check News - Breaking News & Analysis",
+    description: "Stay informed with the latest crime news, investigations, and safety alerts. Your trusted source for breaking news and in-depth analysis.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Crime Check News",
+  },
+};
 
 export default async function Home() {
   const client = createClient();

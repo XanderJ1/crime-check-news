@@ -39,6 +39,7 @@ export async function generateMetadata({
         const image = article.data.meta_image?.url || article.data.featured_image?.url;
 
         return {
+            metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://crimechecknews.com'),
             title: article.data.meta_title || title,
             description,
             openGraph: {
@@ -102,6 +103,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
     const relativeTime = formatRelativeTime(article.data.publish_date || article.first_publication_date);
     const readTime = article.data.read_time || 5;
     const featuredImage = article.data.featured_image;
+    const image = article.data.meta_image?.url || article.data.featured_image?.url;
 
     // Get article URL for sharing
     const articleUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/article/${uid}`;
@@ -162,6 +164,25 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
                         <p className="text-xl text-gray-200 mb-6 max-w-3xl">
                             {excerpt}
                         </p>
+
+                        <script
+                            type="application/ld+json"
+                            dangerouslySetInnerHTML={{
+                                __html: JSON.stringify({
+                                    "@context": "https://schema.org",
+                                    "@type": "NewsArticle",
+                                    "headline": title,
+                                    "image": [image],
+                                    "datePublished": publishDate,
+                                    "dateModified": article.last_publication_date,
+                                    "author": [{
+                                        "@type": "Person",
+                                        "name": author,
+                                        "url": `${process.env.NEXT_PUBLIC_SITE_URL}/author/${author.replace(/\s+/g, '-').toLowerCase()}`
+                                    }]
+                                })
+                            }}
+                        />
 
                         {/* Article Meta */}
                         <div className="flex flex-wrap items-center gap-4 text-gray-300">
