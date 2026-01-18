@@ -1,0 +1,17 @@
+[33md2ac10a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Optimize SEO
+[33m1d8009d[m submit sitemap
+[33m17db1ff[m add sms reset
+[33md298e2d[m update adsense
+[33ma9bc38d[m add google ads.txt
+[33m4e84ac6[m add google adsense
+[33m1cdaf3f[m add google adsense
+[33m5b122fd[m Add comment disquse
+[33m266dfa9[m Add comment disqus
+[33md7c1ddd[m Add comment disus
+[33m21eeb1d[m passed url as env variable
+[33m4f1ecfd[m Fix search page: await searchParams for Next.js 15+ compatibility
+[33mafb5c56[m Implement search functionality: add search page and update header
+[33m0a74ff3[m changed the favicon
+[33m48c127a[m Optimize for Vercel deployment: SSR, standalone output, remotePatterns
+[33meb23207[m Update spacing, branding, and layout improvements
+[33m2d36ed6[m first commit

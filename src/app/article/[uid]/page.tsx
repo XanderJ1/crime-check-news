@@ -37,24 +37,60 @@ export async function generateMetadata({
         const title = extractPlainText(article.data.title);
         const description = article.data.meta_description || extractPlainText(article.data.excerpt);
         const image = article.data.meta_image?.url || article.data.featured_image?.url;
+        const author = article.data.author || "Unknown";
+        const publishDate = article.data.publish_date || article.first_publication_date;
+        const category = article.data.category || "General";
+        const tags = article.data.tags?.map((t: any) => t.tag) || [];
+        const articleUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/article/${uid}`;
 
         return {
             metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://crimechecknews.com'),
             title: article.data.meta_title || title,
             description,
+            keywords: [category, ...tags, "crime news", "breaking news"],
+            authors: [{ name: author }],
+            creator: author,
+            publisher: "Crime Check News",
+            alternates: {
+                canonical: articleUrl,
+            },
             openGraph: {
                 title: article.data.meta_title || title,
                 description,
-                images: image ? [{ url: image }] : [],
+                images: image ? [
+                    {
+                        url: image,
+                        width: 1200,
+                        height: 630,
+                        alt: title,
+                    }
+                ] : [],
                 type: "article",
-                publishedTime: article.data.publish_date || article.first_publication_date,
-                authors: [article.data.author || "Unknown"],
+                publishedTime: publishDate,
+                modifiedTime: article.last_publication_date,
+                authors: [author],
+                section: category,
+                tags: tags,
+                url: articleUrl,
+                siteName: "Crime Check News",
             },
             twitter: {
                 card: "summary_large_image",
                 title: article.data.meta_title || title,
                 description,
                 images: image ? [image] : [],
+                creator: "@crimechecknews",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    "max-video-preview": -1,
+                    "max-image-preview": "large",
+                    "max-snippet": -1,
+                },
             },
         };
     } catch (error) {
@@ -172,14 +208,67 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
                                     "@context": "https://schema.org",
                                     "@type": "NewsArticle",
                                     "headline": title,
-                                    "image": [image],
-                                    "datePublished": publishDate,
-                                    "dateModified": article.last_publication_date,
-                                    "author": [{
+                                    "description": excerpt,
+                                    "image": image ? [image] : [],
+                                    "datePublished": article.data.publish_date || article.first_publication_date,
+                                    "dateModified": article.last_publication_date || article.first_publication_date,
+                                    "author": {
                                         "@type": "Person",
                                         "name": author,
+                                        "image": authorImage,
+                                        "description": authorBio,
                                         "url": `${process.env.NEXT_PUBLIC_SITE_URL}/author/${author.replace(/\s+/g, '-').toLowerCase()}`
-                                    }]
+                                    },
+                                    "publisher": {
+                                        "@type": "Organization",
+                                        "name": "Crime Check News",
+                                        "logo": {
+                                            "@type": "ImageObject",
+                                            "url": `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`
+                                        }
+                                    },
+                                    "mainEntityOfPage": {
+                                        "@type": "WebPage",
+                                        "@id": articleUrl
+                                    },
+                                    "articleSection": category,
+                                    "keywords": article.data.tags?.map((t: any) => t.tag).join(", ") || category,
+                                    "wordCount": article.data.content?.reduce((acc: number, slice: any) => {
+                                        return acc + (slice.primary?.text?.[0]?.text?.split(' ').length || 0);
+                                    }, 0) || 500,
+                                    "inLanguage": "en-US",
+                                    "isAccessibleForFree": "True",
+                                })
+                            }}
+                        />
+                        
+                        {/* Breadcrumb Schema */}
+                        <script
+                            type="application/ld+json"
+                            dangerouslySetInnerHTML={{
+                                __html: JSON.stringify({
+                                    "@context": "https://schema.org",
+                                    "@type": "BreadcrumbList",
+                                    "itemListElement": [
+                                        {
+                                            "@type": "ListItem",
+                                            "position": 1,
+                                            "name": "Home",
+                                            "item": process.env.NEXT_PUBLIC_SITE_URL
+                                        },
+                                        {
+                                            "@type": "ListItem",
+                                            "position": 2,
+                                            "name": category,
+                                            "item": `${process.env.NEXT_PUBLIC_SITE_URL}/${category.toLowerCase()}`
+                                        },
+                                        {
+                                            "@type": "ListItem",
+                                            "position": 3,
+                                            "name": title,
+                                            "item": articleUrl
+                                        }
+                                    ]
                                 })
                             }}
                         />

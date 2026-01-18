@@ -31,12 +31,32 @@ interface Article {
 export const metadata: Metadata = {
   title: "Crime Check News - Breaking News & Analysis",
   description: "Stay informed with the latest crime news, investigations, and safety alerts. Your trusted source for breaking news and in-depth analysis.",
+  keywords: ["crime news", "breaking news", "investigations", "safety alerts", "crime analysis", "law enforcement", "criminal justice", "news today"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://crimechecknews.com",
+  },
   openGraph: {
     title: "Crime Check News - Breaking News & Analysis",
     description: "Stay informed with the latest crime news, investigations, and safety alerts. Your trusted source for breaking news and in-depth analysis.",
     type: "website",
     locale: "en_US",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://crimechecknews.com",
     siteName: "Crime Check News",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Crime Check News",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Crime Check News - Breaking News & Analysis",
+    description: "Stay informed with the latest crime news, investigations, and safety alerts.",
+    images: ["/twitter-image.png"],
+    creator: "@crimechecknews",
   },
 };
 
